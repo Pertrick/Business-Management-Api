@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Head Fragment -->
+    <div th:fragment="head">
+        <!-- SITE TITTLE -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Eventre</title>
+
+        <!-- PLUGINS CSS STYLE -->
+        <!-- Bootstrap -->
+        <link th:href="@{/plugins/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+        <!-- Themefisher Font -->
+        <link th:href="@{/plugins/themefisher-font/style.css}" rel="stylesheet">
+        <!-- Font Awesome -->
+        <link th:href="@{/plugins/font-awsome/css/font-awesome.min.css}" rel="stylesheet">
+        <!-- Magnific Popup -->
+        <link th:href="@{/plugins/magnific-popup/magnific-popup.css}" rel="stylesheet">
+        <!-- Slick Carousel -->
+        <link th:href="@{/plugins/slick/slick.css}" rel="stylesheet">
+        <link th:href="@{/plugins/slick/slick-theme.css}" rel="stylesheet">
+        <!-- CUSTOM CSS -->
+        <link th:href="@{/css/style.css}" rel="stylesheet">
+
+        <!-- FAVICON -->
+        <link th:href="@{/images/favicon.png}" rel="shortcut icon">
+    </div>
+</head>
+
+<body>
+<!-- Navigation Fragment -->
+<div th:fragment="nav">
+    <nav>
+        <ul>
+            <li><a href="/" th:classappend="${activePage == 'home' ? 'active' : ''}">Home</a></li>
+            <li><a href="/about" th:classappend="${activePage == 'about' ? 'active' : ''}">About</a></li>
+            <li><a href="/contact" th:classappend="${activePage == 'contact' ? 'active' : ''}">Contact</a></li>
+        </ul>
+    </nav>
+</div>
+
+<!-- Footer Fragment -->
+<footer class="footer-main" th:fragment="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block text-center">
+                    <div class="footer-logo">
+                        <img src="images/footer-logo.png" alt="logo" class="img-fluid">
+                    </div>
+                    <ul class="social-links-footer list-inline">
+                        <li class="list-inline-item">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#"><i class="fa fa-rss"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#"><i class="fa fa-vimeo"></i></a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Subfooter -->
+<footer class="subfooter">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 align-self-center">
+                <div class="copyright-text">
+                    <p><a href="#">Eventre</a> &#169; 2017 All Right Reserved</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <a href="#" class="to-top"><i class="fa fa-angle-up"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+<!-- JAVASCRIPTS -->
+<!-- jQuey -->
+<script th:src="@{/plugins/jquery/jquery.js}"></script>
+<!-- Popper js -->
+<script th:src="@{/plugins/popper/popper.min.js}"></script>
+<!-- Bootstrap 4 -->
+<script th:src="@{/plugins/bootstrap/js/bootstrap.min.js}"></script>
+<!-- Smooth Scroll -->
+<script th:src="@{/plugins/smoothscroll/SmoothScroll.min.js}"></script>
+<!-- Isotope -->
+<script th:src="@{/plugins/isotope/mixitup.min.js}"></script>
+<!-- Magnific Popup -->
+<script th:src="@{/plugins/magnific-popup/jquery.magnific-popup.min.js}"></script>
+<!-- Slick Carousel -->
+<script th:src="@{/plugins/slick/slick.min.js}"></script>
+<!-- SyoTimer -->
+<script th:src="@{/plugins/syotimer/jquery.syotimer.min.js}"></script>
+<!-- Google Mapl -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
+<script type="text/javascript" th:src="@{/plugins/google-map/gmap.js}"></script>
+<!-- Custom Script -->
+<script th:src="@{/js/custom.js}"></script>
+</body>
+
+</html>
