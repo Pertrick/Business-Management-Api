@@ -19,7 +19,6 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "users")
-@Component
 public class User {
 
     @Id
