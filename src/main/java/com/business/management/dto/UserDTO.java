@@ -1,7 +1,10 @@
 package com.business.management.dto;
 
+import com.business.management.entity.Role;
+import com.business.management.entity.Tenant;
 import com.business.management.validation.ValidUUID;
 
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -10,6 +13,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 
+import java.util.Set;
 import java.util.UUID;
 
 @Data
@@ -33,4 +37,9 @@ public class UserDTO {
     @NotNull(message = "Password is required")
     @Size(min=6, max=100, message = "Password must be between at least 8 character")
     private String password;
+
+    @NotNull(message = "Tenant ID is required")
+    private Tenant tenant;
+
+    private Set<Role> roles;
 }

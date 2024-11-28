@@ -41,6 +41,9 @@ public class User {
     @JsonIgnore
     private String password;
 
+    @ManyToOne
+    @JoinColumn(name = "tenant_id", referencedColumnName = "tenantId")
+    private Tenant tenant;
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(name = "users_roles",

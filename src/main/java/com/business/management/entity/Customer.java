@@ -7,11 +7,13 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.Set;
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "customers")
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY )
@@ -32,9 +34,17 @@ public class Customer {
     @Pattern(regexp = "^[0-9]{11}$", message = "Phone number must be exactly 11 digits")
     private String phone;
 
-    private String address;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "address_id")
+    private Address address;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+    @Column(insertable = false)
     private LocalDateTime createdAt;
+
+    @Column(insertable = false)
     private LocalDateTime updatedAt;
 
     @PrePersist
